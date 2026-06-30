@@ -204,7 +204,6 @@ a { color: var(--accent); }
   font-weight: 600;
   color: var(--accent);
 }
-
 /* Subpage */
 .hero.subpage { padding: 3rem 0 3.25rem; }
 
