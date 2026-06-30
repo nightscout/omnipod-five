@@ -225,6 +225,123 @@ a { color: var(--accent); }
   color: var(--fg-soft);
 }
 
+/* FAQ band with side table of contents (open-beta subpage) */
+.faq-band {
+  border-top: 1px solid var(--border);
+  margin-top: 3rem;
+  padding: 3rem 0;
+}
+
+.faq-inner {
+  width: 100%;
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.faq-layout {
+  display: grid;
+  grid-template-columns: 15rem 1fr;
+  gap: 2.5rem;
+  align-items: start;
+  margin-top: 1.5rem;
+}
+
+.faq-toc { position: sticky; top: 1.5rem; }
+
+.faq-toc h3 {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--fg-soft);
+  margin: 0 0 0.75rem;
+}
+
+.faq-toc ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-left: 2px solid var(--border);
+}
+
+.faq-toc a {
+  display: block;
+  padding: 0.4rem 0 0.4rem 1rem;
+  margin-left: -2px;
+  border-left: 2px solid transparent;
+  color: var(--fg-soft);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  line-height: 1.35;
+}
+
+.faq-toc a:hover { color: var(--accent); }
+
+.faq-toc a.active {
+  color: var(--accent);
+  border-left-color: var(--accent);
+  font-weight: 600;
+}
+
+.faq-group { scroll-margin-top: 1.5rem; }
+.faq-group + .faq-group { margin-top: 2.5rem; }
+
+.faq-group h3 {
+  font-size: 1.2rem;
+  margin: 0 0 1rem;
+}
+
+@media (max-width: 52rem) {
+  .faq-layout { grid-template-columns: 1fr; gap: 1.25rem; }
+  .faq-toc { position: static; }
+  .faq-toc ol {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    border-left: 0;
+  }
+  .faq-toc a {
+    margin-left: 0;
+    padding: 0.35rem 0.75rem;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+  }
+  .faq-toc a.active { border-color: var(--accent); }
+}
+
+/* Warning callout (open-beta subpage) */
+.warning {
+  background: #fff8e6;
+  border: 1px solid #f0d68a;
+  border-left: 4px solid #e0a800;
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem;
+  margin-top: 1.5rem;
+  color: var(--fg);
+}
+
+.warning-title {
+  margin: 0 0 0.5rem;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: #8a6100;
+}
+
+.warning p { margin: 0 0 0.75rem; }
+.warning ol { margin: 0; padding-left: 1.25rem; }
+.warning li { margin: 0.5rem 0; }
+
+/* Setup instructions band (open-beta subpage) */
+.setup-band {
+  border-top: 1px solid var(--border);
+  padding: 3rem 0 1rem;
+}
+
+.setup-band > .wrap > h2 { margin-bottom: 1.5rem; }
+
 /* Footer */
 .site-footer {
   border-top: 1px solid var(--border);

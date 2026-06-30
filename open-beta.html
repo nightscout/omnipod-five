@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Join the open beta &mdash; Omnipod 5 Open-Source AID</title>
+  <meta name="description" content="Open beta build instructions for Omnipod 5 support in Loop and Trio.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="topbar">
+    <div class="wrap logos">
+      <img class="logo-ns" src="https://images.squarespace-cdn.com/content/v1/55f63267e4b0b1dfc5acf418/1442203069181-92NIEDXNKCFH2N60T7VS/ns+foundation+green+text.png?format=1500w" alt="Nightscout Foundation">
+    </div>
+  </div>
+
+  <header class="hero subpage">
+    <div class="wrap">
+      <h1>Omnipod 5 Open Beta</h1>
+      <div class="cta-row">
+        <a class="btn btn-ghost" href="#intro">Before you begin</a>
+        <a class="btn btn-ghost" href="#faq">FAQ</a>
+        <a class="btn btn-ghost" href="#setup">Setup instructions</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <a class="back-link" href="index.html">&larr; Back to overview</a>
+
+    <section id="intro" class="about">
+      <h2>Before you begin</h2>
+      <p>
+        The open beta is intended for <strong>experienced Loop or Trio users who are
+        comfortable following custom build instructions</strong>. Omnipod&nbsp;5 support
+        is still being tested and is not yet recommended for everyone.
+      </p>
+      <div class="warning">
+        <p class="warning-title">Known Limitations</p>
+        <ol>
+          <li>
+            <b>Using Nightscout as a CGM source is not supported in Omnipod 5 at this time.</b> 
+            You must use a CGM that wakes up the app, such as Dexcom, Eversense, and European Libre&nbsp;2 Plus sensors. 
+            If you use xDrip4iOS, it must be configured to provide a heartbeat.
+          </li>
+          <li>
+            <b>This is not 100% stable software.</b> 
+            It is possible that something might not work when you first switch to the Omnipod&nbsp;5 Pod type. 
+            <u>Do not fill the Omnipod&nbsp;5 Pod until you reach the &ldquo;Pair O5 Pod&rdquo; screen that tells you to fill it.</u>
+            When that happens, it means your installed code should work with Omnipod&nbsp;5 Pods.
+            Be sure to have a backup DASH or Eros Pod on hand in case the transition is not successful.</li>
+        </ol>
+      </div>
+    </section>
+  </main>
+
+  <section class="faq faq-band">
+    <div class="faq-inner">
+      <h2 id="faq">Frequently asked questions</h2>
+
+      <div class="faq-layout">
+        <nav class="faq-toc" aria-label="FAQ categories">
+          <h3>Categories</h3>
+          <ol>
+            <li><a href="#faq-technical">Technical &amp; compatibility</a></li>
+            <li><a href="#faq-access">Getting access to Omnipod&nbsp;5 pods</a></li>
+            <li><a href="#faq-ios-osaid">For current iOS OS-AID users</a></li>
+            <li><a href="#faq-aaps">For current AAPS users</a></li>
+            <li><a href="#faq-o5-users">For current Omnipod&nbsp;5 system users</a></li>
+          </ol>
+        </nav>
+
+        <div class="faq-groups">
+          <div class="faq-group" id="faq-technical">
+            <h3>Technical &amp; compatibility questions</h3>
+
+            <details>
+              <summary>Can I update my iOS OS-AID app right now to be able to switch to Omnipod&nbsp;5 Pods?</summary>
+              <div class="answer">
+                <p>If you are affected by the Atlas Pods&mdash;either frequent 203 errors, or you have an iPhone&nbsp;16 (all models) or 17e&mdash;switching to Omnipod&nbsp;5 will resolve these issues. In testing, less than 5% of Omnipod&nbsp;5 Pods had errors. If you are not affected, there is no reason to urgently switch to Omnipod&nbsp;5.</p>
+              </div>
+            </details>
+            <details>
+              <summary>I have an iPhone&nbsp;16 or 17e. Will Omnipod&nbsp;5 Pods work for me with iOS OS-AID?</summary>
+              <div class="answer">
+                <p>Yes, with no reported issues. The issues you are aware of relate to DASH Pods with the Atlas boards inside. In our testing thus far, Omnipod 5 has not been susceptible to this issue.</p>
+              </div>
+            </details>
+            <details>
+              <summary>Which iPhone models and iOS versions have you tested Omnipod&nbsp;5 Pods with?</summary>
+              <div class="answer">
+                <p>We have specifically tested with iPhone&nbsp;17 Pro, 17 Air, 16 Pro, iPhone&nbsp;15 Pro, iPhone&nbsp;13, iPhone&nbsp;SE 2nd generation, and iPhone&nbsp;SE 3rd generation on iOS&nbsp;18 and iOS&nbsp;26.</p>
+              </div>
+            </details>
+            <details>
+              <summary>My phone and iOS combination isn&rsquo;t on that list. What do you think I should do?</summary>
+              <div class="answer">
+                <p>We have thoroughly tested the most common iPhones during Private Beta testing. Initial testing on an iPhone&nbsp;16 and a 17e indicated that Omnipod&nbsp;5 Pods are NOT affected by the connection issues present on DASH Pods; however, we are still conducting more testing. We do not expect other iPhone models to have issues, as long as they are able to support iOS&nbsp;18 or 26.</p>
+              </div>
+            </details>
+            <details>
+              <summary>What about those 203 errors with Atlas DASH Pods?</summary>
+              <div class="answer">
+                <p>There are no reported issues with in-date, unexpired Omnipod&nbsp;5 Pods. (The issues you are aware of relate to DASH Pods with the Atlas boards inside.) Note that because they are a different device generation, Omnipod&nbsp;5 Pods are NOT labeled with &ldquo;SAW&rdquo; or &ldquo;ATLAS&rdquo; like DASH Pods, and in our testing thus far, Omnipod 5 Pods have NOT experienced 203 errors.</p>
+              </div>
+            </details>
+            <details>
+              <summary>Are there any other issues I should be aware of?</summary>
+              <div class="answer">
+                <p>In testing, faults were more likely with expired Omnipod&nbsp;5 Pods that were manufactured in 2022 and 2023 than with in-date, unexpired Pods. If your Omnipod&nbsp;5 Pods are expired, we recommend you request a new order of Omnipod&nbsp;5 Pods from your pharmacy or HCP.</p>
+              </div>
+            </details>
+            <details>
+              <summary>I am using DASH Pods with my OS-AID system and not having any problems. Do I have to change to Omnipod&nbsp;5 Pods?</summary>
+              <div class="answer">
+                <p>Not urgently. If you are not having any problems, that is great. You are probably running through a stash of RBW/SAW Pods, which work very well for iOS OS-AID. However, you are likely to receive the newer Atlas Pods at some point in the near future, because RBW/SAW Pod production will stop once Insulet runs out of SAW Bluetooth chips. While you may not need to use Omnipod&nbsp;5 Pods now, you should still update your app to start using the Universal Omnipod Pump manager (OmnipodKit) in preparation for moving to Omnipod&nbsp;5 Pods.</p>
+              </div>
+            </details>
+            <details>
+              <summary>I have an Android phone. Can I put Loop or Trio on it and use Omnipod&nbsp;5 Pods that way?</summary>
+              <div class="answer">
+                <p><strong>No. Loop and Trio are for iOS (iPhone) only.</strong> You can get an iPhone and use iOS OS-AID, or stick with your current system until the AndroidAPS developers get AndroidAPS working with Omnipod&nbsp;5 Pods. Keep up to date on their progress by monitoring the AAPS Users Facebook group or WeAreNotWaiting Discord server.</p>
+              </div>
+            </details>
+            <details>
+              <summary>An Omnipod&nbsp;5 Pod has a direct connection with the CGM sensor. Does this also happen with OS-AID, so I could loop without my phone nearby?</summary>
+              <div class="answer">
+                <p><strong>No. You need your phone nearby at all times.</strong> Your phone is running the OS-AID application, just as it would with a DASH Pod or another type of pump.</p>
+              </div>
+            </details>
+            <details>
+              <summary>Do I have to wear my Pod on the same side of my body as my CGM, or within line of sight, if I use Omnipod&nbsp;5 Pods with Loop/Trio?</summary>
+              <div class="answer">
+                <p>No. Your Omnipod&nbsp;5 Pod and CGM can be on any body parts you usually use for your pump and CGM, as long as your phone is nearby.</p>
+              </div>
+            </details>
+            <details>
+              <summary>My friend who has the Omnipod&nbsp;5 system says they don&rsquo;t need to carry their Controller or phone all the time because the CGM and Pod have a direct connection, so isn&rsquo;t your answer above wrong?</summary>
+              <div class="answer">
+                <p>No, it is correct. If you want the direct Pod-sensor connection, that is available with the Omnipod&nbsp;5 app and the official Insulet hybrid closed-loop system only, but it is not possible with OS-AID. However, OS-AID grants you freedom of sensor choice&mdash;for example, you could loop with an Eversense&nbsp;365 CGM and still use Omnipod&nbsp;5 Pods as your insulin pump.</p>
+              </div>
+            </details>
+            <details>
+              <summary>Can I just run an OS-AID app complication on my Apple Watch and loop that way, without my phone nearby?</summary>
+              <div class="answer">
+                <p><strong>No. You need your phone nearby at all times.</strong> Your phone is running the OS-AID application, not the watch.</p>
+              </div>
+            </details>
+            <details>
+              <summary>I have some Omnipod&nbsp;5 Pods left over from trying it. Can I use them with my OS-AID app?</summary>
+              <div class="answer">
+                <p>If the Pods have not expired, you can get the updated OS-AID code and it should work fine with them. In testing, faults were more likely with expired Omnipod&nbsp;5 Pods that were manufactured in 2022 and 2023 than with in-date, unexpired Pods. If your Omnipod&nbsp;5 Pods are expired, we recommend you request a new order of Omnipod&nbsp;5 Pods from your pharmacy or HCP.</p>
+                <p>Reminder: Using Nightscout as a CGM source will not work with Omnipod&nbsp;5 Pods at this time. You must use a CGM that wakes up the app, such as Dexcom, Eversense, and European Libre&nbsp;2 Plus sensors. If you use xDrip4iOS, it must be configured to provide a heartbeat.</p>
+              </div>
+            </details>
+            <details>
+              <summary>Does it matter which sensor the Omnipod&nbsp;5 box says the Pods will work with? For example, the Omnipod&nbsp;5 Pods say Libre&nbsp;2 Plus on the box, but I have Dexcom&nbsp;G7.</summary>
+              <div class="answer">
+                <p>The answer to this question has two parts:</p>
+                <p>With OS-AID, it does not matter which sensor is named on the outside of the Pod box. You need your phone nearby at all times for your CGM values to go into your OS-AID app.</p>
+                <p>However, in case you ever need to switch away from OS-AID and use the built-in Omnipod&nbsp;5 algorithm, it could be a good idea to request a prescription from your doctor for the Pod type that supports the CGM you currently use. For example, if your Omnipod&nbsp;5 Pods say &ldquo;Libre&nbsp;2+&rdquo; and you use Dexcom&nbsp;G7 as your CGM, you would not be able to use the Omnipod&nbsp;5 Automated Mode if you had to switch off OS-AID and use an official Omnipod&nbsp;5 app or controller. You would be able to use Manual Mode only.</p>
+              </div>
+            </details>
+            <details>
+              <summary>Does it matter which country I get Omnipod&nbsp;5 Pods from? For example, if I live in the US, will Omnipod&nbsp;5 Pods from Europe work with my OS-AID app?</summary>
+              <div class="answer">
+                <p>Yes, they will work. There is no geofencing issue with Pods (the same is true for Eros and DASH Pods).</p>
+                <p>Further information: CGM systems have more restrictions than Pods. Libre&nbsp;2 Plus sensors have regional app locking. With Dexcom&nbsp;G7 or ONE+, your first sensor session must start inside the country of the App Store you downloaded the phone app from (or you can follow these instructions: <a href="https://www.loopnlearn.org/g7-geofence/" target="_blank" rel="noopener">G7 geofence instructions at Loop and Learn</a>).</p>
+              </div>
+            </details>
+            <details>
+              <summary>Will my data go into Glooko if I use Omnipod&nbsp;5 Pods with OS-AID?</summary>
+              <div class="answer">
+                <p>No. You will still need to use Nightscout and/or Tidepool. When used with OS-AID, Omnipod&nbsp;5 Pods will work just like DASH Pods&mdash;only better, because there are no phone compatibility issues or 203 errors.</p>
+              </div>
+            </details>
+            <details>
+              <summary>Does this announcement mean iOS OS-AID can now be used with the Sequel twiist pump?</summary>
+              <div class="answer">
+                <p>No. This announcement is strictly about Omnipod&nbsp;5 Pods ONLY.</p>
+              </div>
+            </details>
+            <details>
+              <summary>Does this announcement mean OS-AID will support Omnipod&nbsp;6 when it is released?</summary>
+              <div class="answer">
+                <p>It is too early to say. Omnipod&nbsp;6 has not been released yet, so we cannot determine whether Omnipod&nbsp;6 Pods will work with OS-AID.</p>
+              </div>
+            </details>
+          </div>
+
+          <div class="faq-group" id="faq-access">
+            <h3>Getting access to Omnipod&nbsp;5 pods</h3>
+
+            <details>
+              <summary>Do I need to have the Omnipod&nbsp;5 Controller or iPhone app (iPhone app is US-only) in order to use Omnipod&nbsp;5 Pods with iOS OS-AID?</summary>
+              <div class="answer">
+                <p>The answer to this question has three parts.</p>
+                <p>Technically, no.</p>
+                <p>However, your healthcare team, health insurance or funding entity may insist that you have a proper &lsquo;start&rsquo; on Omnipod&nbsp;5. This may mean you are required to obtain the Controller. Costs and funding for the Omnipod&nbsp;5 system will depend on your local country situation. Open-source AID developers cannot advise on this topic.</p>
+                <p>For further info on this topic, here is a list of local Looped groups on Facebook where you may find information from other people in your country:</p>
+                <ul>
+                  <li><a href="https://www.facebook.com/groups/1782449781971680/" target="_blank" rel="noopener">🌎 Looped</a></li>
+                  <li><a href="https://www.facebook.com/groups/2161109864145506/" target="_blank" rel="noopener">🌎 Loop and Learn</a></li>
+                  <li><a href="https://www.facebook.com/groups/1351938092206709/" target="_blank" rel="noopener">🌎 Trio</a></li>
+                  <li><a href="https://www.facebook.com/groups/146850135950765/" target="_blank" rel="noopener">🇬🇧 Looped UK</a></li>
+                  <li><a href="https://www.facebook.com/groups/460136084364219/" target="_blank" rel="noopener">🇩🇪 Looped DE</a></li>
+                  <li><a href="https://www.facebook.com/groups/1632288200199175/" target="_blank" rel="noopener">🇳🇴 Looped Norge</a></li>
+                  <li><a href="https://www.facebook.com/groups/661514380864081/" target="_blank" rel="noopener">🇸🇪 Looped Sweden</a></li>
+                  <li><a href="https://www.facebook.com/groups/379616715878771/" target="_blank" rel="noopener">🇩🇪🇦🇹🇨🇭 iOS-Looper D-A-CH</a></li>
+                </ul>
+                <p>Even if you don&rsquo;t have to get an Omnipod&nbsp;5 Controller to get Omnipod&nbsp;5 Pods, having an Omnipod&nbsp;5 Controller registered with Insulet (or the distributor, if your country has one) is a good idea, so you will be notified if there&rsquo;s ever a recall (as happened in mid-2026). Having a registered account may make it simpler to get replacements for faulty Omnipod&nbsp;5 Pods. So get a Controller if you can, register it, and you&rsquo;ll be able to quote the serial number if you need to request replacement Pods.</p>
+              </div>
+            </details>
+            <details>
+              <summary>My friend who used to use Omnipod&nbsp;5 says I can have their old Omnipod&nbsp;5 Controller in order to prove I have a Controller and mention that serial number to order Omnipod&nbsp;5 Pods. This will work, right?</summary>
+              <div class="answer">
+                <p>This could work, but you and the person gifting you the Controller will need to complete some administrative steps. Insulet and official distributors of the Omnipod&nbsp;5 system keep track of the personal name of the user associated with a serial number. Ask the person whose name is on the account to contact Insulet or the distributor to start the process of de-registering the Controller.</p>
+              </div>
+            </details>
+            <details>
+              <summary>I was able to order Omnipod&nbsp;5 Pods from a third-party distributor and they didn&rsquo;t ask for the Controller serial number, so isn&rsquo;t your answer above wrong?</summary>
+              <div class="answer">
+                <p>No. The answer above refers to Insulet and official distributors of the Omnipod&nbsp;5 system. A third-party distributor for Pods can sell to whoever they want. You&rsquo;re fortunate this is an option in your country. In some countries, Insulet or the official Omnipod&nbsp;5 system distributor keeps a database of who is allowed to order what, so your personal experience is not necessarily relevant across different countries.</p>
+              </div>
+            </details>
+            <details>
+              <summary>My doctor says that if I want to get Omnipod&nbsp;5 Pods I have to go for training on Omnipod&nbsp;5. This sounds like a waste of time because I&rsquo;m going to use the Pods with OS-AID anyway. Can I just tell the rep I don&rsquo;t need the training and skip it?</summary>
+              <div class="answer">
+                <p>Probably not. In most cases you will simply need to complete the training as required. Regardless, it may be helpful for you to understand how the Omnipod&nbsp;5 system works, in case you ever need to temporarily switch off of OS-AID.</p>
+                <p>Further info: if you tell an Insulet rep you&rsquo;re using the Omnipod&nbsp;5 Pods for open-source looping, they may decline to sign off on your training, which will mean you can&rsquo;t order the Pods.</p>
+              </div>
+            </details>
+            <details>
+              <summary>I have to do the Omnipod&nbsp;5 training. What should I do with the Controller afterwards?</summary>
+              <div class="answer">
+                <p>You should keep the Omnipod&nbsp;5 Controller and user guide with your other spare diabetes supplies, because if your phone ever becomes unusable, you can at least use the Omnipod&nbsp;5 Pods in Manual Mode (or even Automated Mode) until your OS-AID setup is back online. You may also need to quote the serial number of the Controller in order to get replacement Pods if you have any failures, etc.</p>
+              </div>
+            </details>
+          </div>
+
+          <div class="faq-group" id="faq-ios-osaid">
+            <h3>For current iOS OS-AID users</h3>
+
+            <details>
+              <summary>I use Browser Build. Can I update my iOS OS-AID app right now to be able to switch to Omnipod&nbsp;5 Pods? (How do I do that before the 3-month expiry?)</summary>
+              <div class="answer">
+                <p>Please update to the latest dev version of Trio/Loop. <strong>Omnipod&nbsp;5 support is not yet available there</strong>, but will be added soon (weeks or months). After you&rsquo;ve updated your app, you will need to delete your current pump after your current Pod expires. Then, select &ldquo;All Omnipod Types&rdquo; (this label may change before release), and choose &ldquo;Omnipod&nbsp;5.&rdquo;</p>
+              </div>
+            </details>
+            <details>
+              <summary>I use Xcode build. How do I update my iOS OS-AID app to be able to use Omnipod&nbsp;5 Pods?</summary>
+              <div class="answer">
+                <p>Please build the latest dev version of Trio/Loop. <strong>Omnipod&nbsp;5 support is not yet available there</strong>, but will be added soon (weeks or months). After you&rsquo;ve updated your app, you will need to delete your current pump after your current Pod expires. Then, select &ldquo;All Omnipod Types&rdquo; (this label may change before release), and choose &ldquo;Omnipod&nbsp;5.&rdquo;</p>
+              </div>
+            </details>
+            <details>
+              <summary>Do I need to change anything on my Nightscout site if I&rsquo;m changing Pod types?</summary>
+              <div class="answer">
+                <p>If you&rsquo;re an existing iOS OS-AID user moving from Eros or DASH Pods and staying on the same iOS OS-AID system, no.</p>
+              </div>
+            </details>
+            <details>
+              <summary>Can I continue to use the same insulin type I use with DASH Pods if I change to Omnipod&nbsp;5 Pods?</summary>
+              <div class="answer">
+                <p>Yes &mdash; just keep the insulin type the same when you go through the onboarding steps to &ldquo;delete pump&rdquo; (remove DASH) and &ldquo;add new pump&rdquo; (add All Omnipod Types).</p>
+              </div>
+            </details>
+          </div>
+
+          <div class="faq-group" id="faq-aaps">
+            <h3>For current AAPS users</h3>
+
+            <details>
+              <summary>I want to use Omnipod&nbsp;5 Pods because my health insurance is making it difficult to get DASH Pods. What should I do first?</summary>
+              <div class="answer">
+                <p>Check the <a href="#faq-technical">general FAQs above</a>. You&rsquo;ll need to speak with your healthcare team to get your prescription changed. Then you&rsquo;ll need to get an iPhone and get onto iOS OS-AID.</p>
+              </div>
+            </details>
+            <details>
+              <summary>I use AndroidAPS. Can I put Loop or Trio on my Android phone and use Omnipod&nbsp;5 Pods that way?</summary>
+              <div class="answer">
+                <p>No. To keep many of the algorithm features you&rsquo;re used to, you can get an iPhone and change to iOS OS-AID, or stick with your current system until the AndroidAPS developers get AndroidAPS working with Omnipod&nbsp;5 Pods. Keep up to date on their progress by monitoring the AAPS Users Facebook group or the WeAreNotWaiting Discord server. Tentatively, the AndroidAPS developers hope to support Omnipod&nbsp;5 by the end of the year; however, there is still much additional work needed.</p>
+                <p>If you want to change to Trio, start with <a href="https://triodocs.org/configuration/migration/aaps-migration/" target="_blank" rel="noopener">the AAPS migration guide on TrioDocs</a>.</p>
+              </div>
+            </details>
+            <details>
+              <summary>Can I pay someone to build an iOS OS-AID for me? It sounds complicated.</summary>
+              <div class="answer">
+                <p>You&rsquo;ll need to build it yourself. But building it yourself does not mean building it alone. Here are some Facebook groups you can join:</p>
+                <ul>
+                  <li><a href="https://www.facebook.com/groups/TheLoopedGroup/" target="_blank" rel="noopener">The Looped group</a></li>
+                  <li><a href="https://www.facebook.com/groups/diytrio/" target="_blank" rel="noopener">The Trio group</a></li>
+                  <li><a href="https://www.facebook.com/groups/LOOPandLEARN" target="_blank" rel="noopener">Loop and Learn</a></li>
+                </ul>
+                <p>Volunteers are always willing to help.</p>
+              </div>
+            </details>
+          </div>
+
+          <div class="faq-group" id="faq-o5-users">
+            <h3>For current Omnipod&nbsp;5 system users</h3>
+
+            <details>
+              <summary>I&rsquo;m an Omnipod&nbsp;5 system user and I&rsquo;ve never considered open-source diabetes tech before. How do I get started with OS-AID?</summary>
+              <div class="answer">
+                
+                <!--
+                <p class="stub">Draft note &mdash; this answer still needs to be written. It should cover talking with your healthcare provider (this may be outside their usual experience) alongside the technical steps, drawing on existing open-source support resources.</p>
+                -->
+
+                <p class="stub">As open-source developers, we cannot provide specific medical advice and would recommend you consult with your endocrinologist or physician. You can find resources on getting started with OS-AID on <a href="https://www.loopnlearn.org/starting-loop/">the Loop and Learn website</a> run by members of the community.</p>
+              </div>
+            </details>
+            <!--
+            <details>
+              <summary>I want to change from the Omnipod&nbsp;5 Controller/app to iOS OS-AID. What do I need to do?</summary>
+              <div class="answer">
+                <p><strong>Trio:</strong> The pump you choose is less important than learning to use Trio itself. Take it slow and find the correct values for your core settings (Basal, ISF, and CR). <a href="https://triodocs.org/usage/concepts/" target="_blank" rel="noopener">triodocs.org/usage/concepts</a> is a great resource for learning about these settings and how to test them, and <a href="https://triodocs.org/configuration/new-user-setup/" target="_blank" rel="noopener">triodocs.org/configuration/new-user-setup</a> will walk you through getting started with Trio.</p>
+                <p class="stub"><strong>Loop:</strong> Instructions coming soon.</p>
+              </div>
+            </details>
+            <details>
+              <summary>I have been using Humalog/NovoLog/NovoRapid with the Omnipod&nbsp;5 system because my diabetes care team said I couldn&rsquo;t use Fiasp/Lyumjev with Omnipod&nbsp;5. If I change to iOS OS-AID, can I use Fiasp or Lyumjev instead?</summary>
+              <div class="answer">
+                <p>iOS OS-AID systems have insulin models that support all of these insulin types. You would need to speak with your diabetes healthcare team about changing your insulin prescription. One point you can raise is that the reason Omnipod&nbsp;5 is not indicated for use with Fiasp or Lyumjev is that the Omnipod&nbsp;5 SmartAdjust algorithm was not tested with these insulins. The materials inside Omnipod&nbsp;5 and DASH Pods that come into contact with insulin are identical, and DASH Pods are indicated for use with Fiasp and Lyumjev.</p>
+              </div>
+            </details>
+            <details>
+              <summary>I am changing from Omnipod&nbsp;5 to iOS OS-AID. What should I do with the old Controller?</summary>
+              <div class="answer">
+                <p>It is worth keeping the Omnipod&nbsp;5 Controller and user guide alongside your other spare diabetes supplies. If your phone ever becomes unusable, you can still use the Omnipod&nbsp;5 Pods in Manual Mode (or even Automated Mode) until your OS-AID setup is back online. You may also need to quote the serial number of the Controller in order to obtain replacement Pods in the event of any Pod failures.</p>
+              </div>
+            </details>
+            <details>
+              <summary>Can I pay someone to build an iOS OS-AID for me? It sounds complicated.</summary>
+              <div class="answer">
+                <p>You will need to build it yourself. However, building it yourself does not mean building it alone. Here are some Facebook groups you can join:</p>
+                <ul>
+                  <li><a href="https://www.facebook.com/groups/TheLoopedGroup/" target="_blank" rel="noopener">The Looped group</a></li>
+                  <li><a href="https://www.facebook.com/groups/diytrio/" target="_blank" rel="noopener">The Trio group</a></li>
+                  <li><a href="https://www.facebook.com/groups/LOOPandLEARN" target="_blank" rel="noopener">Loop and Learn</a></li>
+                </ul>
+                <p>Volunteers are always willing to help.</p>
+              </div>
+              -->
+
+
+            </details>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Highlight the active FAQ category in the side table of contents while scrolling.
+    (function () {
+      var links = Array.prototype.slice.call(document.querySelectorAll('.faq-toc a'));
+      var byId = {};
+      links.forEach(function (a) { byId[a.getAttribute('href').slice(1)] = a; });
+
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            links.forEach(function (a) { a.classList.remove('active'); });
+            var active = byId[entry.target.id];
+            if (active) active.classList.add('active');
+          }
+        });
+      }, { rootMargin: '0px 0px -70% 0px', threshold: 0 });
+
+      document.querySelectorAll('.faq-group').forEach(function (group) { observer.observe(group); });
+    })();
+  </script>
+
+  <section id="setup" class="setup-band">
+    <div class="wrap">
+      <h2>Setup instructions</h2>
+
+        <div id="faq-onboarding">
+          <h3>Getting started &mdash; important onboarding info</h3>
+
+          <p>If you&rsquo;re already running an iOS open-source AID system, the onboarding instructions in the <a href="https://loopdocs.org" target="_blank" rel="noopener">LoopDocs</a> and <a href="https://triodocs.org" target="_blank" rel="noopener">TrioDocs</a> documentation are the best place to start.</p>
+
+
+      <div class="warning">
+          <p><strong>During the open beta, we ask that you save your app's log files in case you experience a fault.</strong> We would like every fault to be uploaded to the Google form listed below so we can analyze it. You&rsquo;re welcome to upload files for successful Omnipod&nbsp;5 Pods too&mdash;but please be sure to let us know about any faults.</p>
+      </div>
+
+          <p>The <a href="#" class="stub">OmnipodKit Testing Log form (link coming soon)</a> can be used by anyone with a Google account. Enter your Google email and it will be used to tag your file with your name. If you need directions, they are provided on the form. Then upload your Loop Reports or Trio log.txt files and submit the form.</p>
+
+          <ul>
+            <li><strong>Loop:</strong> Please save a Loop Report right after you change a pod. Each Loop Report keeps 84 hours of data, so it covers a full Pod life.</li>
+            <li><strong>Trio:</strong> Please save your log.txt file right after you change a pod. That captures the end of one pod and the beginning of the next&mdash;the log with the beginning of the pod provides key information about the pod that isn&rsquo;t available otherwise.</li>
+          </ul>
+        </div>
+
+
+        <br />
+
+
+      <section id="loop" class="callout">
+        <h2>Current Loop users</h2>
+        <p>
+          Build instructions for enabling Omnipod&nbsp;5 support in Loop will appear here.
+        </p>
+        <ol>
+          <li class="stub">Stub step 1 &mdash; prerequisites.</li>
+          <li class="stub">Stub step 2 &mdash; build configuration.</li>
+          <li class="stub">Stub step 3 &mdash; pairing your Omnipod&nbsp;5 pod.</li>
+        </ol>
+      </section>
+
+      <section id="trio" class="callout">
+        <h2>Current Trio users</h2>
+        <p>
+          Build instructions for enabling Omnipod&nbsp;5 support in Trio will appear here.
+        </p>
+        <ol>
+          <li class="stub">Stub step 1 &mdash; prerequisites.</li>
+          <li class="stub">Stub step 2 &mdash; build configuration.</li>
+          <li class="stub">Stub step 3 &mdash; pairing your Omnipod&nbsp;5 pod.</li>
+        </ol>
+      </section>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p class="disclaimer">
+        OmnipodKit, Loop, and Trio are open-source, DIY automated insulin
+        delivery systems. They are not approved by the FDA or any other regulatory bodies, and are not
+        affiliated with or endorsed by Insulet or any other pump/CGM manufacturer. Use at
+        your own risk.
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
