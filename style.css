@@ -95,7 +95,13 @@ body {
   font-size: 1rem;
   text-decoration: none;
   transition: transform 0.12s ease, background 0.12s ease, box-shadow 0.12s ease;
+  /* Default appearance (used on light backgrounds, e.g. the open-beta callout) */
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 4px 14px rgba(12, 143, 155, 0.25);
 }
+
+.btn:hover { background: var(--accent-deep); }
 
 .btn:active { transform: translateY(1px); }
 
@@ -108,6 +114,8 @@ body {
 .btn-primary:hover { background: #f0fbfb; }
 
 .btn-ghost {
+  background: transparent;
+  box-shadow: none;
   border: 1.5px solid rgba(255, 255, 255, 0.55);
   color: #fff;
 }
@@ -195,6 +203,26 @@ a { color: var(--accent); }
 .soon {
   font-weight: 600;
   color: var(--accent);
+}
+
+/* Subpage */
+.hero.subpage { padding: 3rem 0 3.25rem; }
+
+.hero.subpage h1 { margin-bottom: 1.25rem; }
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.back-link:hover { text-decoration: underline; }
+
+.stub {
+  font-style: italic;
+  color: var(--fg-soft);
 }
 
 /* Footer */

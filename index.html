@@ -26,12 +26,14 @@
       <h1>Omnipod&nbsp;5 is coming to Loop &amp; Trio this summer</h1>
       <div class="cta-row">
         <a class="btn btn-primary" href="#help">Get ready</a>
+        <a class="btn btn-ghost" href="#open-beta">Join the open beta</a>
         <a class="btn btn-ghost" href="#faq">Read the FAQ</a>
       </div>
     </div>
   </header>
 
   <main class="wrap">
+    <p>Last updated: June 30, 2026</p>
     <section id="about" class="about">
       <h2>What&rsquo;s happening?</h2>
       <p>
@@ -39,16 +41,30 @@
         
         <a href="https://loopdocs.org" target="_blank" rel="noopener">Loop</a> and
         <a href="https://triodocs.org" target="_blank" rel="noopener">Trio</a>. 
-        We're currently in a closed beta with a group of experienced testers,
-        which we plan to expand in an 
-        <strong>open beta planned for this summer</strong>.
+        Omnipod 5 support is currently in an <strong>open beta</strong> for experienced Loopers or Trioneers,
+        and <strong>will be available to all users later this summer!</strong>
       </p>
-      <p>While we aren't quite ready to launch Omnipod 5 support yet, 
-        this has been such a long-running ask from our community that we wanted 
-        to share this exciting news. This work was only possible through the amazing work of 
+
+      <p>This work was only possible through the amazing work of 
         our open-source community of developers supported by the
-        <a href="https://nightscoutfoundation.org" target="_blank" rel="noopener">Nightscout Foundation</a>.
+        <a href="https://nightscoutfoundation.org" target="_blank" rel="noopener">Nightscout Foundation</a>.</p>
+
+
+        
+      <h3>What's Loop? What's Trio?</h3>
+      <p>
+        Loop and Trio are both <strong>open-source automated insulin delivery (OSAID) systems for patients with Type 1 diabetes</strong>, built by the #WeAreNotWaiting community.
+        They are apps which you build and run on an iPhone that connect with compatible insulin pumps and continuous glucose monitors.
+        Both apps are maintained by a shared community of developers and are not formally approved by any regulatory body.
       </p>
+
+      <h3>For existing Loopers or Trioneers:</h3>
+      <p>As long as you're an experienced Loop or Trio builder, you can follow the instructions on this page to prepare your build to support Omnipod 5!
+
+       Otherwise, we recommend you be patient for just a bit longer while all the rough edges are worked out, and you'll be able to start using Omnipod 5 soon.
+      </p>
+
+
     </section>
 
     <section id="help" class="callout">
@@ -58,20 +74,36 @@
         <strong>OmnipodKit</strong> is a new, unified open-source Omnipod driver,
         built over multiple years of work. It works with Eros, DASH, and (soon) 
         Omnipod&nbsp;5 pods, and is already available in the latest version of Trio
-        and the dev branch of Loop.
-      </p>
-      <p>You can get ready now (and help us) by switching to it with
-        your current pods - just note that Omnipod&nbsp;5 support isn&rsquo;t
-        switched on yet. Follow these instructions to test it with DASH or Eros:
+        and Loop.
       </p>
       <ol>
         <li>Update to the latest version of <strong>Loop</strong> or <strong>Trio</strong>.</li>
-        <li>The next time you are changing out a new pod, check the list of available Pump Managers in your app.</li>
-        <li>If you see the option 'All Omnipod Types', that is OmnipodKit -- select it! If you don't see the 'All Omnipod Types', don't worry - the next time you update, it will become available.</li>
-        <li>Enable the <strong>Data Sharing</strong> option and use OmnipodKit like you normally with your current DASH or Eros pods.</li>
+        <li>If possible, use Browser Build so you stay up to date!
+          <ol type="a">
+            <li>You can learn more about Browser Build at <a href="https://triodocs.org/install/build/browser/browser-build-overview/">Triodocs</a> or <a href="https://loopkit.github.io/loopdocs/browser/bb-overview/">Loopdocs</a>.</li>
+          </ol>
+        </li>
+        <li>Enable the <strong>Data Sharing</strong> option which will automatically reports app crashes.</li>
+        <li>When Omnipod 5 support is fully ready, you'll be all ready to go!</li>
       </ol>
+    </section>
+
+
+
+
+
+
+    <section id="open-beta" class="callout">
+      <h2>Join the open beta</h2>
       <p>
-        By enabling Data Sharing and switching to OmnipodKit, you'll be only a single click away from using Omnipod 5 once it's ready!
+        If you're an <b>experienced Loop or Trio user willing to follow custom build instructions</b>, please select based on which app you use:
+      </p>
+
+      <div class="cta-row">
+        <a class="btn" href="open-beta.html#loop">Current Loop users</a>
+        <a class="btn" href="open-beta.html#trio">Current Trio users</a>
+      </div>
+
     </section>
 
     <section id="faq" class="faq">
@@ -81,7 +113,7 @@
         <summary>Can I switch to using Omnipod 5 pods now?</summary>
         <div class="answer">
           <p>
-            We&rsquo;re excited too - <b>BUT Omnipod 5 support is not available in Trio or Loop yet!</b>
+            We&rsquo;re excited too - <b>BUT Omnipod 5 support is not available in Trio or Loop yet</b> unless you are an advanced user willing to follow custom build instructions!
             However, OmnipodKit is already available in the latest
             version of Trio and the dev branch of Loop for DASH and Eros pods. 
           </p>
@@ -154,26 +186,12 @@
         <div class="answer">
           <p class="soon">When it&rsquo;s ready&trade;&#65039;</p> - likely by the end of the summer.
           <p>
-            You can already use the new Omnipod driver, OmnipodKit. The Omnipod&nbsp;5
-            portion is still in closed-beta testing, but you can use the new OmnipodKit
-            by updating to the latest version of Loop/Trio, deleting your pump in settings after
-            your pod dies, and selecting &ldquo;All Omnipod Types&rdquo; from the pump menu.
+            If you are familiar with building Loop or Trio, you can follow the open beta instructions above.
+            Alternatively, just keep your app updated via Browser Build and you'll get support for Omnipod 5 when it's fully ready.
           </p>
         </div>
       </details>
 
-      <details>
-        <summary>Can I be a closed beta tester? Do you need more testers?</summary>
-        <div class="answer">
-          <p>
-            At this time, a select number of developers and experienced users are doing
-            highly involved testing. Once it is stable enough for advanced users, it will
-            be released to the dev branch of Trio/Loop and we will update the community with that progress.
-            So no, we do not need additional closed beta testers yet - but we are working fast on making this available
-            to the community as soon as possible!
-          </p>
-        </div>
-      </details>
 
       <details>
         <summary>What does this mean about support for other pumps, like Mobi?</summary>
