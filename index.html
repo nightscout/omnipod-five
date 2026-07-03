@@ -4,11 +4,26 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Omnipod 5 &mdash; Open-Source AID</title>
-  <meta name="description" content="OmnipodKit brings open-source Omnipod 5 support to Loop and Trio. Open beta this summer.">
+  <meta name="description" content="Omnipod 5 support is coming to Loop and Trio. Now in open beta.">
+  <link rel="canonical" href="https://nightscout.github.io/omnipod-five/">
+  <link rel="icon" type="image/x-icon" href="https://images.squarespace-cdn.com/content/v1/55f63267e4b0b1dfc5acf418/1442265065987-1VM2K3CEKIJW9HN2O4BN/favicon.ico?format=100w">
+  <meta name="theme-color" content="#0c6770">
+  <meta property="og:site_name" content="Omnipod 5 Open-Source AID">
+  <meta property="og:title" content="Omnipod 5 is coming to Loop &amp; Trio this summer">
+  <meta property="og:description" content="Omnipod 5 support is coming to Loop and Trio. Now in open beta.">
+  <meta property="og:url" content="https://nightscout.github.io/omnipod-five/">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://images.squarespace-cdn.com/content/v1/55f63267e4b0b1dfc5acf418/1442203069181-92NIEDXNKCFH2N60T7VS/ns+foundation+green+text.png?format=1500w">
+  <meta property="og:image:alt" content="Nightscout Foundation logo">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Omnipod 5 is coming to Loop &amp; Trio this summer">
+  <meta name="twitter:description" content="Omnipod 5 support is coming to Loop and Trio. Now in open beta.">
+  <meta name="twitter:image" content="https://images.squarespace-cdn.com/content/v1/55f63267e4b0b1dfc5acf418/1442203069181-92NIEDXNKCFH2N60T7VS/ns+foundation+green+text.png?format=1500w">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-79494897-1"></script><script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('set', 'developer_id.dZjQwMz', true);gtag('config', 'UA-79494897-1');</script>
 </head>
 <body>
   <div class="topbar">
@@ -33,7 +48,7 @@
   </header>
 
   <main class="wrap">
-    <p>Last updated: June 30, 2026</p>
+    <p>Last updated: July 2, 2026</p>
     <section id="about" class="about">
       <h2>What&rsquo;s happening?</h2>
       <p>
@@ -41,7 +56,7 @@
         
         <a href="https://loopdocs.org" target="_blank" rel="noopener">Loop</a> and
         <a href="https://triodocs.org" target="_blank" rel="noopener">Trio</a>. 
-        Omnipod 5 support is currently in an <strong>open beta</strong> for experienced Loopers or Trioneers,
+        Omnipod 5 support is now in an <strong>open beta</strong> for experienced Loopers or Trioneers,
         and <strong>will be available to all users later this summer!</strong>
       </p>
 
@@ -80,7 +95,7 @@
         <li>Update to the latest version of <strong>Loop</strong> or <strong>Trio</strong>.</li>
         <li>If possible, use Browser Build so you stay up to date!
           <ol type="a">
-            <li>You can learn more about Browser Build at <a href="https://triodocs.org/install/build/browser/browser-build-overview/">Triodocs</a> or <a href="https://loopkit.github.io/loopdocs/browser/bb-overview/">Loopdocs</a>.</li>
+            <li>You can learn more about Browser Build at <a href="https://triodocs.org/install/build/browser/browser-build-overview/">TrioDocs</a> or <a href="https://loopkit.github.io/loopdocs/browser/bb-overview/">LoopDocs</a>.</li>
           </ol>
         </li>
         <li>Enable the <strong>Data Sharing</strong> option which will automatically reports app crashes.</li>
@@ -105,52 +120,48 @@
 
     </section>
 
-    <section id="faq" class="faq">
-      <h2>Frequently asked questions</h2>
+    <section id="faq" class="faq" itemscope itemtype="https://schema.org/FAQPage">
+      <h2 class="faq-head">Frequently asked questions
+        <span class="faq-head-actions">
+          <button type="button" class="btn faq-expand-toggle">Expand all</button>
+        </span>
+      </h2>
 
-      <h3>Key terms</h3>
-      <p><strong>OS-AID</strong> &mdash; open-source automated insulin delivery system.</p>
-      <p><strong>Loop</strong> &mdash; iOS OS-AID system based on the Loop algorithm.</p>
-      <p><strong>Trio</strong> &mdash; iOS OS-AID system based on the oref1 algorithm.</p>
-      <p><strong>AndroidAPS</strong> &mdash; Android OS-AID system based on the oref1 algorithm.</p>
-      <p><strong>Browser Build</strong> &mdash; a way to build and keep Loop or Trio updated using GitHub Actions in a web browser, without needing a Mac.</p>
-      <p><strong>Omnipod DASH</strong> &mdash; the generation of Pods after Eros. They have Bluetooth built in, so no link device is required with OS-AID.</p>
-      <p><strong>Omnipod Eros</strong> &mdash; the older generation of Pods, before DASH. They use radio-frequency comms, so they require a link device with OS-AID.</p>
-
-      <details>
-        <summary>Can I switch to using Omnipod 5 pods now?</summary>
-        <div class="answer">
+      <details itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+        <summary itemprop="name">Can I switch to using Omnipod 5 pods now?</summary>
+        <meta itemprop="keywords" content="availability, available now, use today, ready, switch, open beta, custom build, omnipodkit, dash, eros, data sharing">
+        <div class="answer" itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer"><div itemprop="text">
           <p>
             We&rsquo;re excited too - <b>BUT Omnipod 5 support is not available in Trio or Loop yet</b> unless you are an advanced user willing to follow custom build instructions!
             However, OmnipodKit is already available in the latest
-            version of Trio and the dev branch of Loop for DASH and Eros pods. 
+            versions of Trio and Loop for users of DASH and Eros pods.
           </p>
           <p>
             Our developers have put
             multiple years of work into a unified pump driver that works with Eros,
-            DASH, and Omnipod&nbsp;5 pods.
-            However, the ability to use Omnipod&nbsp;5 is still being tested and
-            won&rsquo;t show up yet. You can help us by enabling the Data Sharing
-            option and using the OmnipodKit option with your current DASH or Eros pods.
+            DASH, and Omnipod&nbsp;5 pods. You can help us by enabling the Data Sharing
+            option while continuing to use your current DASH or Eros pods.
           </p>
-        </div>
+        </div></div>
       </details>
 
-      <details>
-        <summary>I use Omnipod 5 today but not with Loop or Trio. What does this mean for me?</summary>
-        <div class="answer">
+      <details itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+        <summary itemprop="name">I use Omnipod 5 today but not with Loop or Trio. What does this mean for me?</summary>
+        <meta itemprop="keywords" content="current omnipod 5 user, existing user, official app, insulet, controller, nothing changes">
+        <div class="answer" itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer"><div itemprop="text">
           <p>
             Loop and Trio are community-maintained applications for those who were not waiting for
             advanced algorithms to control their type 1 diabetes. <b>If Omnipod 5 is working for you,
               great! Nothing is changing.</b> This announcement brings more options to existing users of Loop and Trio
               who use other pumps or pods.
           </p>
-        </div>
+        </div></div>
       </details>
 
-      <details>
-        <summary>How does this affect Android users or AndroidAPS?</summary>
-        <div class="answer">
+      <details itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+        <summary itemprop="name">How does this affect Android users or AndroidAPS?</summary>
+        <meta itemprop="keywords" content="android, aaps, samsung, pixel, eta, timeline, discord, facebook">
+        <div class="answer" itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer"><div itemprop="text">
           <p>
             Loop and Trio are for iOS (iPhone) only. Once Omnipod 5 support has launched,
             you can get an iPhone and switch to Loop or Trio.
@@ -166,54 +177,72 @@
             developers hope to support Omnipod&nbsp;5 by the end of the year &mdash;
             however, there is still much additional work needed.
           </p>
-        </div>
+        </div></div>
       </details>
 
-      <details>
-        <summary>Does the iPhone 16 or 17e still have connection issues with Omnipod 5 pods?</summary>
-        <div class="answer">
+      <details itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+        <summary itemprop="name">Does the iPhone 16 or 17e still have connection issues with Omnipod 5 pods?</summary>
+        <meta itemprop="keywords" content="iphone 16, iphone 17e, connection issues, bluetooth, disconnect, pairing, atlas, dash, compatibility, phone model">
+        <div class="answer" itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer"><div itemprop="text">
           <p>
             There has been no indication that the iPhone&nbsp;16 or 17e have the same
             connection issues with Omnipod&nbsp;5 pods as with DASH Atlas pods.
           </p>
-        </div>
+        </div></div>
       </details>
 
-      <details>
-        <summary>Does the Omnipod 5 have the 203 errors?</summary>
-        <div class="answer">
+      <details itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+        <summary itemprop="name">Does the Omnipod 5 have the 203 errors?</summary>
+        <meta itemprop="keywords" content="203 error, pod error, fault, failure, screamer, alarm, atlas">
+        <div class="answer" itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer"><div itemprop="text">
           <p>
             We can&rsquo;t guarantee you won&rsquo;t encounter a 203 error or any other
             error, but at this time there has been no indication that the frequency of
             203 errors persists with Omnipod&nbsp;5 pods.
           </p>
-        </div>
+        </div></div>
       </details>
 
-      <details>
-        <summary>When will Omnipod 5 support be released so I can use it?</summary>
-        <div class="answer">
+      <details itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+        <summary itemprop="name">When will Omnipod 5 support be released so I can use it?</summary>
+        <meta itemprop="keywords" content="release date, timeline, eta, when available, launch, summer, open beta, browser build">
+        <div class="answer" itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer"><div itemprop="text">
           <p class="soon">When it&rsquo;s ready&trade;&#65039;</p> - likely by the end of the summer.
           <p>
             If you are familiar with building Loop or Trio, you can follow the open beta instructions above.
             Alternatively, just keep your app updated via Browser Build and you'll get support for Omnipod 5 when it's fully ready.
           </p>
-        </div>
+        </div></div>
       </details>
 
 
-      <details>
-        <summary>What does this mean about support for other pumps, like Mobi?</summary>
-        <div class="answer">
+      <details itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+        <summary itemprop="name">What does this mean about support for other pumps, like Mobi?</summary>
+        <meta itemprop="keywords" content="tandem mobi, t:slim, tslim, other pumps, new pumps, pump support">
+        <div class="answer" itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer"><div itemprop="text">
           <p>
             The same developers working on Omnipod&nbsp;5 are also working on Mobi.
             Omnipod&nbsp;5 took priority due to the drastic increase in 203 errors and
             iPhone 16/17e communication issues. We are still working on Tandem Mobi and
             hope to have an update for you&hellip; soon&trade;&#65039;&hellip;
           </p>
-        </div>
+        </div></div>
       </details>
+
+      <p>For more FAQs specific to the open beta, see the <a href="open-beta.html">open beta information</a>.</p>
     </section>
+
+    <p></p>
+
+      <h3>Key terms</h3>
+      <p><strong>OS-AID</strong> &mdash; open-source automated insulin delivery system.</p>
+      <p><strong>Loop</strong> &mdash; OS-AID system for iPhone based on the Loop algorithm.</p>
+      <p><strong>Trio</strong> &mdash; OS-AID system for iPhone based on the oref1 algorithm.</p>
+      <p><strong>AndroidAPS</strong> &mdash; Android OS-AID system based on the oref1 algorithm.</p>
+      <p><strong>Browser Build</strong> &mdash; a way to build and keep Loop or Trio updated using GitHub Actions in a web browser, without needing a Mac.</p>
+      <p><strong>Omnipod DASH</strong> &mdash; the generation of Pods after Eros. They have Bluetooth built in, so no link device is required with OS-AID.</p>
+      <p><strong>Omnipod Eros</strong> &mdash; the older generation of Pods, before DASH. They use radio-frequency comms, so they require a link device with OS-AID.</p>
+
   </main>
 
   <footer class="site-footer">
@@ -226,5 +255,7 @@
       </p>
     </div>
   </footer>
+
+  <script src="faq.js" defer></script>
 </body>
 </html>

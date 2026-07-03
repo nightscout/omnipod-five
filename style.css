@@ -291,6 +291,88 @@ a { color: var(--accent); }
   margin: 0 0 1rem;
 }
 
+.faq-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem 1rem;
+  flex-wrap: wrap;
+}
+
+/* Mini variant of .btn, right-aligned within the FAQ heading. */
+.faq-expand-toggle.btn {
+  margin-left: auto;
+  padding: 0.28rem 0.7rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  line-height: 1;
+  border: 0;
+  border-radius: 999px;
+  box-shadow: none;
+  cursor: pointer;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+}
+
+/* Chevron: points down (v) when collapsed, flips up (^) when expanded. */
+.faq-expand-toggle.btn::after {
+  content: "";
+  width: 0.42em;
+  height: 0.42em;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: translateY(-0.12em) rotate(45deg);
+  transition: transform 0.15s ease;
+}
+
+.faq-expand-toggle.btn.is-open::after {
+  transform: translateY(0.12em) rotate(-135deg);
+}
+
+/* Right-aligned actions cluster (search + expand toggle) in the FAQ heading. */
+.faq-head-actions {
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.faq-head-actions .faq-expand-toggle.btn { margin-left: 0; }
+
+.faq-search-input {
+  font-family: inherit;
+  font-weight: 400;
+  font-size: 0.85rem;
+  padding: 0.4rem 0.85rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: #fff;
+  color: var(--fg);
+  min-width: 14rem;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.faq-search-input::placeholder { color: var(--fg-soft); }
+
+.faq-search-input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(12, 143, 155, 0.15);
+}
+
+.faq-no-results {
+  color: var(--fg-soft);
+  margin-top: 1rem;
+}
+
+@media (max-width: 40rem) {
+  .faq-head-actions { width: 100%; }
+  .faq-search-input { flex: 1 1 auto; min-width: 0; }
+}
+
 @media (max-width: 52rem) {
   .faq-layout { grid-template-columns: 1fr; gap: 1.25rem; }
   .faq-toc { position: static; }
@@ -323,15 +405,21 @@ a { color: var(--accent); }
 .warning-title {
   margin: 0 0 0.5rem;
   font-weight: 700;
-  font-size: 0.95rem;
+  font-size: 1.1rem;
   text-transform: uppercase;
   letter-spacing: 0.03em;
-  color: #8a6100;
+  color: var(--fg-soft);
 }
 
 .warning p { margin: 0 0 0.75rem; }
 .warning ol { margin: 0; padding-left: 1.25rem; }
 .warning li { margin: 0.5rem 0; }
+
+/* Button rows below warning/callout text */
+.warning .cta-row,
+.callout .cta-row {
+  padding: 0.75rem 0 0.25rem;
+}
 
 /* Setup instructions band (open-beta subpage) */
 .setup-band {
