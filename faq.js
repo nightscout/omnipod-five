@@ -45,6 +45,71 @@
     sync();
   });
 
+  // Direct links to individual questions, via a hover-revealed anchor after
+  // the title. Opening a URL with a matching #hash expands that question.
+  // Prefer a curated id="..." on the <details> tag (short, max 3 words);
+  // the slug below is only a fallback for questions that don't have one yet.
+  (function () {
+    var items = Array.prototype.slice.call(document.querySelectorAll('.faq details'));
+    if (!items.length) return;
+
+    var STOP = ['a', 'an', 'the', 'i', 'my', 'me', 'to', 'do', 'does', 'can',
+      'it', 'is', 'are', 'of', 'or', 'and', 'with', 'for', 'that', 'this',
+      'on', 'in', 'how', 'what', 'when', 'will', 'you', 'use', 'using'];
+    function slugify(text) {
+      var words = (text || '').toLowerCase()
+        .replace(/[‘’']/g, '')
+        .replace(/[^a-z0-9]+/g, ' ')
+        .trim().split(/\s+/);
+      var kept = words.filter(function (w) { return STOP.indexOf(w) === -1; });
+      return (kept.length ? kept : words).slice(0, 3).join('-');
+    }
+
+    items.forEach(function (d) {
+      var summary = d.querySelector('summary');
+      if (!summary) return;
+
+      if (!d.id) {
+        var base = slugify(summary.textContent) || 'faq';
+        var id = base, n = 2;
+        while (document.getElementById(id)) { id = base + '-' + n++; }
+        d.id = id;
+      }
+
+      var link = document.createElement('a');
+      link.className = 'faq-link';
+      link.href = '#' + d.id;
+      link.setAttribute('aria-label', 'Direct link to this question');
+      link.innerHTML = '<svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"/></svg>';
+      // Clicking a link inside <summary> would also toggle the details;
+      // cancel that and handle the navigation ourselves so the answer
+      // always ends up open.
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        d.open = true;
+        if (location.hash === '#' + d.id) {
+          d.scrollIntoView({ behavior: 'smooth' });
+        } else {
+          location.hash = d.id;
+        }
+      });
+      summary.appendChild(link);
+    });
+
+    function openFromHash() {
+      var id = location.hash.slice(1);
+      if (!id) return;
+      var el = document.getElementById(id);
+      if (el && el.tagName === 'DETAILS') {
+        el.open = true;
+        el.scrollIntoView();
+      }
+    }
+    window.addEventListener('hashchange', openFromHash);
+    openFromHash();
+  })();
+
   // FAQ search. Each <details> carries curated keywords in
   // <meta itemprop="keywords" content="..."> (schema.org Question microdata).
   // The primary pass matches against those keywords plus the question text;

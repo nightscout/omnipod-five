@@ -183,15 +183,37 @@ a { color: var(--accent); }
 
 .faq summary::-webkit-details-marker { display: none; }
 
-.faq summary::after {
-  content: "+";
-  font-size: 1.4rem;
+/* Hover-revealed direct link to a question; margin-left: auto keeps it at
+   the right edge, just before the "+" marker. */
+.faq summary .faq-link {
+  display: inline-flex;
+  align-items: center;
+  margin-left: auto;
   color: var(--accent);
-  transition: transform 0.2s ease;
-  line-height: 1;
+  opacity: 0;
+  transition: opacity 0.12s ease;
 }
 
-.faq details[open] summary::after { transform: rotate(45deg); }
+.faq summary:hover .faq-link,
+.faq summary .faq-link:focus-visible { opacity: 1; }
+
+@media (hover: none) {
+  .faq summary .faq-link { opacity: 0.45; }
+}
+
+/* Chevron marker: points down (v) when closed, up (^) when open. */
+.faq summary::after {
+  content: "";
+  flex: none;
+  width: 0.45em;
+  height: 0.45em;
+  border-right: 2px solid var(--accent);
+  border-bottom: 2px solid var(--accent);
+  transform: translateY(-25%) rotate(45deg);
+  transition: transform 0.2s ease;
+}
+
+.faq details[open] summary::after { transform: translateY(25%) rotate(225deg); }
 
 .faq .answer {
   padding: 0 1.25rem 1.1rem;
