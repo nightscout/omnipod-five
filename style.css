@@ -15,6 +15,10 @@
 
 html { scroll-behavior: smooth; }
 
+/* Avoid a lone word on the last line of headings, questions, and paragraphs. */
+h1, h2, h3, .faq-toc a { text-wrap: balance; }
+p, li { text-wrap: pretty; }
+
 body {
   margin: 0;
   background: var(--bg);
@@ -95,7 +99,7 @@ body {
   font-size: 1rem;
   text-decoration: none;
   transition: transform 0.12s ease, background 0.12s ease, box-shadow 0.12s ease;
-  /* Default appearance (used on light backgrounds, e.g. the open-beta callout) */
+  /* Default appearance (used on light backgrounds, e.g. the compatibility page callout) */
   background: var(--accent);
   color: #fff;
   box-shadow: 0 4px 14px rgba(12, 143, 155, 0.25);
@@ -129,6 +133,15 @@ section + section { margin-top: 3rem; }
 
 h2 {
   font-size: 1.6rem;
+  letter-spacing: -0.01em;
+  margin: 0 0 1.25rem;
+}
+
+/* Large intro statement below the hero (compatibility subpage) */
+.lede {
+  font-size: 1.35rem;
+  font-weight: 600;
+  line-height: 1.4;
   letter-spacing: -0.01em;
   margin: 0 0 1.25rem;
 }
@@ -246,7 +259,7 @@ a { color: var(--accent); }
   color: var(--fg-soft);
 }
 
-/* FAQ band with side table of contents (open-beta subpage) */
+/* FAQ band with side table of contents (compatibility subpage) */
 .faq-band {
   border-top: 1px solid var(--border);
   margin-top: 3rem;
@@ -413,7 +426,7 @@ a { color: var(--accent); }
   .faq-toc a.active { border-color: var(--accent); }
 }
 
-/* Warning callout (open-beta subpage) */
+/* Warning callout (compatibility subpage) */
 .warning {
   background: #fff8e6;
   border: 1px solid #f0d68a;
@@ -443,7 +456,7 @@ a { color: var(--accent); }
   padding: 0.75rem 0 0.25rem;
 }
 
-/* Setup instructions band (open-beta subpage) */
+/* Setup instructions band (compatibility subpage) */
 .setup-band {
   border-top: 1px solid var(--border);
   padding: 3rem 0 1rem;

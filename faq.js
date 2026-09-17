@@ -1,4 +1,4 @@
-// Shared FAQ behaviors for index.html and open-beta.html:
+// Shared FAQ behaviors for index.html and compatibility.html:
 // table-of-contents highlighting, expand/hide-all toggles, and keyword search.
 (function () {
   'use strict';
